@@ -1,4 +1,4 @@
-module github.com/leodido/go-npm-package-name
+module github.com/leodido/go-npmpackagename
 
 go 1.19
 
