@@ -11,9 +11,9 @@ var withScopeRe = regexp.MustCompile(`^(?:@(?P<scope>[^/]+?)[/])?(?P<name>[^/]+?
 
 // Validate validates the input npm package name.
 //
-// Notice that npm versions follow stricter naming rules.
+// Notice that npm newer versions follow stricter naming rules.
 // For an input package name to be valid for newer npm rules,
-// this function must give no error AND no warnings (nil).
+// this function must give no error AND no warnings (empty slice).
 //
 // When this function returns an error, the input package name
 // is invalid even for previous npm naming rules.
@@ -65,6 +65,7 @@ func Validate(input []byte) (bool, []Warning, error) {
 		return false, warnings, ErroNonURLFriendly
 	}
 
+	// From now on, the input is valid only for previous npm naming rules
 	if len(input) > 214 {
 		warnings = append(warnings, WarnTooLong)
 	}

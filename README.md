@@ -4,7 +4,9 @@
 
 This Go module exports a single function (`Validate(input []byte)`) that takes a byte slice (ie., a string) as input and tells you whether it's a valid `npm` package name or not.
 
-Notice that it also returns warnings to notify you about inputs that previously were valid `npm` package names but are no more.
+Notice that it also returns warnings to notify you about inputs that were okay by the previous `npm` naming rules but are no more.
+
+For an input package name to be valid for the newer npm naming rules, this function must give no error and no warnings (empty slice).
 
 ## Rules
 
