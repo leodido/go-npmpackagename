@@ -1,7 +1,5 @@
 package npmpackagename
 
-// see https://www.digitalocean.com/community/tutorials/how-to-add-extra-information-to-errors-in-go
-
 type Warning int
 
 const (
